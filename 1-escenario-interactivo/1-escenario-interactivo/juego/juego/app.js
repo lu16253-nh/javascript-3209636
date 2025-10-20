@@ -1,0 +1,1 @@
+const frutas = document.querySelectorAll(".fruta")
