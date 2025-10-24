@@ -1,0 +1,333 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box-;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mesa {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  min-width: 750px;
+  background-image: url(mesa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.manzana {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('manzana.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 100px;
+  left: 100px;
+  z-index: 1;
+}
+
+.fresa {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('fresa.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 350px;
+  left: 80px;
+  z-index: 1;
+}
+
+.cereza {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('cereza.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 80px;
+  left: 600px;
+  z-index: 1;
+}
+
+.puntaje {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 300px;
+  left: 320px;
+  z-index: 1;
+}
+
+.naranja {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('naranja.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 300px;
+  left: 400px;
+  z-index: 1;
+}
+
+.pera {
+  position: absolute;
+  width: 80px;
+  height: 60px;
+  background-image: url('pera.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 250px;
+  left: 250px;
+  z-index: 1;
+}
+
+.sandia {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('sandia.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 380px;
+  left: 600px;
+  z-index: 1;
+}
+
+/*Animacion moneda*/
+.saltar {
+  animation: salto 0.6s ease forwards;
+}
+
+
+@keyframes salto {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateY(-60px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+/* Animacion frutas */
+
+
+@keyframes moverFrutas {
+  0% {
+    left: 55%
+  }
+
+  100% {
+    left: 89%
+  }
+}
+
+.paisaje {
+  background-image: url(paisaje.jpeg);
+  position: relative;
+  width: 750px;
+  height: 500px;
+  min-width: 750px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+
+}
+
+.mariposa1 {
+  background-image: url(mariposa1.png);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 100px;
+  left: 100px;
+  z-index: 1;
+
+}
+
+.mariposa2 {
+  background-image: url(mariposa2.png);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 100px;
+  left: 500px;
+  z-index: 1;
+}
+
+.mariposa3 {
+  background-image: url(mariposa3.png);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 300px;
+  left: 100px;
+  z-index: 1;
+}
+
+.mariposa4 {
+  background-image: url(mariposa4.png);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 300px;
+  left: 500px;
+  z-index: 1;
+
+}
+
+.abeja {
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  background-image: url(abeja.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 250px;
+  left: 250px;
+  z-index: 1;
+}
+
+.mariquita {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  background-image: url(mariquita.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 300px;
+  left: 400px;
+  z-index: 1;
+
+}
+
+.score {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 400px;
+  left: 50px;
+  z-index: 1;
+}
+
+.mar {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  min-width: 750px;
+  background-image: url(mar.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.pez1 {
+  background-image: url(pez1.png);
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 50px;
+  left: 145px;
+  z-index: 1;
+}
+
+.pez2 {
+  background-image: url(pez2.png);
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 50px;
+  left: 400px;
+  z-index: 1;
+}
+
+.pez3 {
+  background-image: url(pez3.png);
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 200px;
+  left: 138px;
+}
+
+.pez4 {
+  background-image: url(pez4.png);
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 200px;
+  left: 400px;
+}
+
+.estrellita {
+  background-image: url(estrellita.png);
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 200px;
+  left: 400px;
+}
+
+.pulpo {
+  background-image: url(pulpo.png);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 5px;
+  left: 650px;
+}
+
+.score2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 27px;
+  left: 315px;
+  z-index: 1;
+}
