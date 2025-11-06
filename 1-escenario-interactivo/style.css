@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mesa, .paisaje, .mar {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  min-width: 750px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.mesa {
+  background-image: url(mesa.png);
+}
+.paisaje {
+  background-image: url(paisaje.jpeg);
+}
+.mar {
+  background-image: url(mar.jpg);
+}
+
+.manzana, .fresa, .cereza, .naranja, .pera, .sandia,
+.mariposa1, .mariposa2, .mariposa3, .mariposa4, .abeja, .mariquita,
+.pez1, .pez2, .pez3, .pez4, .estrellita, .pulpo {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.manzana { width: 50px; height: 50px; top: 100px; left: 100px; background-image: url('manzana.png'); }
+.fresa { width: 80px; height: 80px; top: 350px; left: 80px; background-image: url('fresa.png'); }
+.cereza { width: 80px; height: 80px; top: 80px; left: 600px; background-image: url('cereza.png'); }
+.naranja { width: 80px; height: 80px; top: 300px; left: 400px; background-image: url('naranja.png'); }
+.pera { width: 80px; height: 60px; top: 250px; left: 250px; background-image: url('pera.png'); }
+.sandia { width: 80px; height: 80px; top: 380px; left: 600px; background-image: url('sandia.png'); }
+
+.mariposa1 { width: 150px; height: 150px; top: 100px; left: 100px; background-image: url(mariposa1.png); }
+.mariposa2 { width: 150px; height: 150px; top: 100px; left: 500px; background-image: url(mariposa2.png); }
+.mariposa3 { width: 150px; height: 150px; top: 300px; left: 100px; background-image: url(mariposa3.png); }
+.mariposa4 { width: 150px; height: 150px; top: 300px; left: 500px; background-image: url(mariposa4.png); }
+.abeja { width: 86px; height: 86px; top: 250px; left: 250px; background-image: url(abeja.png); }
+.mariquita { width: 88px; height: 88px; top: 300px; left: 400px; background-image: url(mariquita.png); }
+
+.pez1 { width: 130px; height: 130px; top: 50px; left: 145px; background-image: url(pez1.png); }
+.pez2 { width: 140px; height: 140px; top: 50px; left: 400px; background-image: url(pez2.png); }
+.pez3 { width: 130px; height: 130px; top: 200px; left: 138px; background-image: url(pez3.png); }
+.pez4 { width: 130px; height: 130px; top: 200px; left: 400px; background-image: url(pez4.png); }
+.estrellita { width: 100px; height: 100px; top: 200px; left: 400px; background-image: url(estrellita.png); }
+.pulpo { width: 100px; height: 100px; top: 5px; left: 650px; background-image: url(pulpo.png); }
+
+/* Estilos de Score */
+.puntaje, .score, .score2 {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 1;
+  font-size: 1.5em;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.puntaje { top: 300px; left: 320px; }
+.score { top: 400px; left: 50px; }
+.score2 { top: 27px; left: 315px; }
+
+@keyframes saltar {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) translateY(-50px);
+  }
+  100% {
+    transform: scale(0) translateY(-100px);
+    opacity: 0;
+  }
+}
+.saltar {
+  animation: saltar 0.8s ease forwards;
+}
+
+@keyframes meneo-vertical {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-15%); }
+  50% { transform: translateY(15%); }
+  75% { transform: translateY(-10%); }
+}
+.meneo-vertical {
+  animation: meneo-vertical 1s ease-in-out forwards;
+  transform-origin: center;
+}
+
+@keyframes meneo-horizontal {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(15%); }
+  50% { transform: translateX(-15%); }
+  75% { transform: translateX(10%); }
+}
+.meneo-horizontal {
+  animation: meneo-horizontal 1s ease-in-out forwards;
+  transform-origin: center;
+}
+
+.escenario {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.escenario.activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.flecha1, .flecha2 {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1000;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.flecha1 {
+  right: 50px;
+  background-image: url('flecha1.png');
+}
+.flecha2 {
+  left: 50px;
+  background-image: url('flecha2.png');
+}
+
+.flecha1.oculta, .flecha2.oculta {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.indicadores {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.indicador {
+  width: 80px;
+  height: 50px;
+  border-radius: 5px;
+  background: transparent;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.miniatura-escenario {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.indicador.activo {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px gold;
+}
+
+.indicador:hover {
+  transform: scale(1.05);
+}
